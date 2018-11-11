@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<div id="app">
+    {{ message }}
+</div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!'
+    }
+  })
+</script>
+
+<div id="app-2">
+    <span v-bind:title="message">
+      Hover your mouse over me for a few seconds
+      to see my dynamically bound title!
+    </span>
+  </div>
+<script>
+  var app2 = new Vue({
+    el: '#app-2',
+    data: {
+      message: 'You loaded this page on ' + new Date().toLocaleString()
+    }
+  })
+</script>
+
+<div id="app-3">
+    <span v-if="seen">Vue</span>
+  </div>
+<script>
+var app3 = new Vue({
+  el: '#app-3',
+  data: {
+    seen: true
+  }
+})
+</script>  
+
+<div id="app-4">
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.nama }} : {{ todo.telpon }}
+      </li>
+    </ol>
+    <button v-on:click="adddata">Add aja bro</button>
+    <button v-on:click="removedata">ini mah hapus bro</button>
+  </div>
+
+  <script>
+  var app4 = new Vue({
+  el: '#app-4',
+  data: {
+    todos: [
+      { nama: 'Learn JavaScript', telpon:"0899" },
+      { nama: 'Learn Vue', telpon: "123" },
+      { nama: 'Build something awesome', telpon: "312313" }
+    ]
+  }, methods: {
+    adddata: function () {
+      this.todos.push({ nama: 'fadhiel', telpon:"1011" })
+    },
+    removedata: function() {
+        this.todos.pop()
+    }
+  }
+})
+  </script>
+
+<div id="app-6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+  </div>
+<script>
+var app6 = new Vue({
+  el: '#app-6',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>To Do List</h1>
+        <input v-model="newItem" v-on:keyup.enter='newItem' />
+        <button v-on:click="adddata">Add</button>
+        <button v-on:click="removedata">Delete</button>
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.newItem}}
+            </li>
+        </ol>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                todos: [{
+                        nama: 'Learn JavaScript'
+                    },
+                    {
+                        nama: 'Learn Vue'
+                    },
+                    {
+                        nama: 'Build something awesome'
+                    }
+                ]
+            },
+            methods: {
+                adddata: function () {
+                    this.todos.push {
+                        newItem
+                    }
+                },
+                removedata: function () {
+                    this.todos.pop()
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
